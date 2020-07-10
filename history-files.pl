@@ -520,8 +520,6 @@ my $NLET_cmd = "/proj/sot/ska/bin/python /data/acis/LoadReviews/script/NONLOADEV
 # NOTE: IT is RecordNonLoadEvent.py that decides to which file the data gets written
 if($test || $sa_testdir)
   { 
-   #$NLET_cmd = "/proj/sot/ska/bin/python /data/acis/LoadReviews/script/NONLOADEVENTTRACKER/RecordNonLoadEvent.py $choice -t --source history_files.pl "; }
-
    $NLET_cmd = $NLET_cmd . ' -t /data/acis/LoadReviews/TEST_NonLoadTrackedEvents.txt ';
   }
 
