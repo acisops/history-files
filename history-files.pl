@@ -557,7 +557,7 @@ if ($choice eq "stop")
 
     # Get the 4 Quaternions
     print "\nI now need the 4 Quaternions that specify the spacecraft attitude:\n";
-    print "    NOTE: Should you not know what the present Q's are, hust hit RETURN for all 4.\n";
+    print "    NOTE: Should you not know what the present Q's are, just hit RETURN for all 4.\n";
     print "          BUT - be aware that you have to hand edit the NLET file before running a thermal model when you do know the values.\n";
 
 
