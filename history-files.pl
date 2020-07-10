@@ -548,7 +548,7 @@ if ($choice eq "stop")
    `$NLET_cmd   --event_time $status_array[0] --status_line $status_array[1] --desc "$descr" `; 
 
     # Now given that this is a Full stop, it could be a Normal Sun Mode or bright start hold. We
-    # need to record th epitch attitude that the spacecraft is presently in due to the stop.
+    # need to record the pitch attitude that the spacecraft is presently in due to the stop.
     # Therefore, get the quaterions from the user and make a maneuiver NLET entry specifying the 
     # pitch attitude.
      
@@ -559,6 +559,10 @@ if ($choice eq "stop")
 
     # Get the 4 Quaternions
     print "\nI now need the 4 Quaternions that specify the spacecraft attitude:\n";
+    print "    NOTE: Should you not know what the present Q's are, hust hit RETURN for all 4.\n";
+    print "          BUT - be aware that you have to hand edit the NLET file before running a thermal model when you do know the values.\n";
+
+
     ($q1, $q2, $q3, $q4, $q_bogus) = Get_4_Qs();
 
     # Print out the user's data responses
@@ -571,7 +575,6 @@ if ($choice eq "stop")
 #       {
 #	    print "\n\nWARNING!!!!!!  You have entered a bogus value for one or more of the Quaternion values.\nThese values will be entered in the Non-Load Event Tracking file as is.\n\nHOWEVER, you MUST edit the file:\n\n/data/acis/LoadReviews/NonLoadTrackedEvents.txt\n\n... and insert the Correct Values BEFORE you attempt to run a thermal model.\n";
 #       }
-
 
     # Now record the "Maneuver" to the Full Stop attitude in the NLET file
     $NLET_cmd = "/proj/sot/ska/bin/python /data/acis/LoadReviews/script/NONLOADEVENTTRACKER/RecordNonLoadEvent.py MAN --source history_files.pl ";
